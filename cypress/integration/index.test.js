@@ -3,19 +3,16 @@ describe("index", () => {
     cy.intercept("*/employees", require("../fixtures/employees")).as(
       "employeesBody"
     );
+
     const pets = require("../fixtures/pets");
     cy.intercept("*/pets*", (req) => {
       const id = req.query.employeeId;
-      req.continue((res) => {
-        if (id) {
-          const employeePets = pets.filter(
-            ({ employeeId }) => employeeId === id
-          );
-          res.send({ body: employeePets });
-        } else {
-          res.send({ body: pets });
-        }
-      });
+      if (id) {
+        const employeePets = pets.filter(({ employeeId }) => employeeId === id);
+        req.reply({ body: employeePets });
+      } else {
+        req.reply({ body: pets });
+      }
     }).as("petsBody");
 
     const { PORT = 3000 } = process.env;
