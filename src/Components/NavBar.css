@@ -1,0 +1,11 @@
+nav {
+  background: var(--primary);
+  border-bottom: 3px solid var(--dark);
+  color: white;
+  text-align: center;
+}
+
+nav h1 {
+  margin: 0;
+  padding: 50px;
+}

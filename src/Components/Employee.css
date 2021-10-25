@@ -1,0 +1,29 @@
+.employee {
+  border: 1px solid var(--gold);
+  border-radius: 5px;
+  padding: 25px;
+  text-align: center;
+}
+
+.employee h3 {
+  margin: 0;
+}
+
+.employee h4 {
+  font-weight: 200;
+}
+
+.employee button {
+  background: var(--gold);
+  border: 1px solid var(--dark);
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.employee button:hover {
+  background: var(--dark);
+  color: white;
+  transition: 0.3s all;
+}
