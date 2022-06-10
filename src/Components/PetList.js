@@ -1,9 +1,14 @@
-export const PetList = () => {
-  return (
-    <aside className="pets-list">
-      <p>No pets listed for this employee.</p>
-    </aside>
-  );
-};
+export default function PetList({petList}){
 
-export default PetList;
+  let pets = petList.map((pet) => {
+    return pet.name
+  })
+  
+   return (
+          <aside className="pets-list">
+            <p> { pets.length < 1 ? 'No pets listed' : pets.join(", ")} </p>
+          </aside>
+        );
+      };
+  
+
