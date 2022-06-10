@@ -16,7 +16,7 @@ export default function EmployeeList () {
   
   useEffect(() => {
     getEmployees()
-  })
+  }), [];
 
   return (
     <main>
